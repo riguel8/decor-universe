@@ -22,7 +22,7 @@ export default function SocialFeed() {
             <div className="w-10 h-px bg-champagne-gold/50" />
           </div>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6 leading-[1.1]">
-            <span className="italic font-subheading text-champagne-gold">@</span>DecorUniverse
+            <span className="italic font-subheading text-champagne-gold">@</span>JB'sCreation
           </h2>
           <p className="text-warm-gray max-w-2xl mx-auto text-base md:text-lg leading-[1.8] font-light">
             A daily curation of our latest creations and behind-the-scenes moments.
