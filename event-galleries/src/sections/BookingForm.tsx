@@ -60,8 +60,8 @@ export default function BookingForm() {
     <section ref={sectionRef} className="py-32 lg:py-40 px-6 lg:px-12 bg-champagne-light relative overflow-hidden">
       {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-champagne-gold/10 rounded-full blur-[200px]" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-champagne/20 rounded-full blur-[180px]" />
+        <div className="absolute top-0 right-1/4 w-150 h-150 bg-champagne-gold/10 rounded-full blur-[200px]" />
+        <div className="absolute bottom-0 left-1/4 w-125 h-125 bg-champagne/20 rounded-full blur-[180px]" />
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -77,7 +77,7 @@ export default function BookingForm() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-r from-transparent to-champagne-gold/60 origin-right"
+              className="w-12 h-px bg-linear-to-r from-transparent to-champagne-gold/60 origin-right"
             />
             <span className="text-champagne-gold text-[11px] tracking-[0.5em] uppercase font-semibold">
               Begin Your Story
@@ -86,7 +86,7 @@ export default function BookingForm() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-l from-transparent to-champagne-gold/60 origin-left"
+              className="w-12 h-px bg-linear-to-l from-transparent to-champagne-gold/60 origin-left"
             />
           </motion.div>
           

@@ -16,7 +16,7 @@ export default function PackagesPage() {
           />
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-matte-black/70 via-matte-black/80 to-matte-black" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-champagne-gold/10 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 rounded-full bg-champagne-gold/10 blur-[120px]" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
@@ -62,7 +62,7 @@ export default function PackagesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative group rounded-[24px] overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
+                className={`relative group rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
                   pkg.featured
                     ? 'bg-matte-black text-white shadow-[0_30px_70px_-20px_rgba(0,0,0,0.4)] ring-1 ring-champagne-gold/30'
                     : 'bg-white text-charcoal shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_30px_70px_-20px_rgba(201,169,110,0.25)]'
@@ -138,9 +138,9 @@ export default function PackagesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mt-20 text-center p-14 bg-white rounded-[24px] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.1)] border border-champagne/20 relative overflow-hidden"
+            className="mt-20 text-center p-14 bg-white rounded-3xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.1)] border border-champagne/20 relative overflow-hidden"
           >
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-champagne-gold/5 blur-[100px]" />
+            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-100 h-100 rounded-full bg-champagne-gold/5 blur-[100px]" />
             <div className="relative z-10">
               <span className="text-champagne-gold text-[11px] tracking-[0.4em] uppercase block mb-4">Bespoke</span>
               <h3 className="font-heading text-3xl md:text-4xl text-charcoal mb-4 leading-[1.15]">

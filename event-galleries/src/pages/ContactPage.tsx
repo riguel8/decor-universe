@@ -15,7 +15,7 @@ export default function ContactPage() {
           />
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-matte-black/70 via-matte-black/80 to-matte-black" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-champagne-gold/10 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 rounded-full bg-champagne-gold/10 blur-[120px]" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
@@ -53,12 +53,12 @@ export default function ContactPage() {
       {/* Contact Info Cards */}
       <section className="py-20 px-6 bg-pearl">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-champagne-gold/15 rounded-[24px] overflow-hidden border border-champagne-gold/15">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-champagne-gold/15 rounded-3xl overflow-hidden border border-champagne-gold/15">
             {[
-              { icon: MapPin, label: 'Visit Us', info: '123 Luxury Avenue\nMakati City, Metro Manila' },
-              { icon: Phone, label: 'Call Us', info: '+63 917 123 4567\nMon — Sat available' },
+              { icon: MapPin, label: 'Visit Us', info: 'Brgy. Marga, Tubod \nSurigao del Norte, Philippines' },
+              { icon: Phone, label: 'Call Us', info: '+63 991 855 0522 \n+63 970 337 9468\nMon — Sun available' },
               { icon: Mail, label: 'Email Us', info: 'hello@decoruniverse.com\nWe respond within 24h' },
-              { icon: Clock, label: 'Office Hours', info: 'Mon — Sat\n9:00 AM — 7:00 PM' },
+              { icon: Clock, label: 'Office Hours', info: 'Mon — Sun\n9:00 AM — 7:00 PM' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}

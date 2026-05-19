@@ -14,8 +14,8 @@ export default function FeaturedPackages() {
     <section ref={sectionRef} className="py-32 lg:py-40 px-6 lg:px-12 bg-ivory relative overflow-hidden">
       {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-champagne-gold/8 blur-[180px]" />
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-champagne/15 blur-[150px]" />
+        <div className="absolute -top-32 -right-32 w-150 h-150 rounded-full bg-champagne-gold/8 blur-[180px]" />
+        <div className="absolute -bottom-32 -left-32 w-125 h-125 rounded-full bg-champagne/15 blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -31,7 +31,7 @@ export default function FeaturedPackages() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-r from-transparent to-champagne-gold/60 origin-right"
+              className="w-12 h-px bg-linear-to-r from-transparent to-champagne-gold/60 origin-right"
             />
             <span className="text-champagne-gold text-[11px] tracking-[0.5em] uppercase font-semibold">
               Exclusive Offerings
@@ -40,7 +40,7 @@ export default function FeaturedPackages() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-l from-transparent to-champagne-gold/60 origin-left"
+              className="w-12 h-px bg-linear-to-l from-transparent to-champagne-gold/60 origin-left"
             />
           </motion.div>
           
@@ -80,7 +80,7 @@ export default function FeaturedPackages() {
             >
               {/* Featured Badge */}
               {pkg.featured && (
-                <div className="absolute top-5 right-5 z-20 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-champagne-gold/20 to-gold/20 backdrop-blur-xl rounded-full border border-champagne-gold/40">
+                <div className="absolute top-5 right-5 z-20 flex items-center gap-2 px-4 py-2 bg-linear-to-r from-champagne-gold/20 to-gold/20 backdrop-blur-xl rounded-full border border-champagne-gold/40">
                   <Sparkles className="w-3.5 h-3.5 text-champagne-gold" />
                   <span className="text-champagne-gold text-[9px] tracking-[0.25em] uppercase font-semibold">Popular</span>
                 </div>
@@ -94,7 +94,7 @@ export default function FeaturedPackages() {
                   className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
 
                 {/* Price tag */}
                 <div className="absolute bottom-6 left-6">
@@ -105,7 +105,7 @@ export default function FeaturedPackages() {
                 </div>
 
                 {/* Hover glow */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-20 bg-champagne-gold/30 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-20 bg-champagne-gold/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
 
               {/* Content */}
@@ -144,7 +144,7 @@ export default function FeaturedPackages() {
                     to={`/packages/${pkg.id}`}
                     className={`flex items-center justify-center gap-2.5 w-full py-4 rounded-full text-[11px] font-semibold tracking-[0.25em] uppercase transition-all duration-500 ${
                       pkg.featured
-                        ? 'bg-gradient-to-r from-champagne-gold to-gold text-white hover:shadow-[0_12px_35px_-8px_rgba(212,175,55,0.6)]'
+                        ? 'bg-linear-to-r from-champagne-gold to-gold text-white hover:shadow-[0_12px_35px_-8px_rgba(212,175,55,0.6)]'
                         : 'bg-matte-black text-pearl hover:bg-charcoal hover:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.3)]'
                     }`}
                   >

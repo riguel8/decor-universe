@@ -408,24 +408,24 @@ export const services: Service[] = [
     description: 'Exquisite tablescapes with fine china, crystal, and luxury linens',
     icon: 'UtensilsCrossed',
   },
+  // {
+  //   id: '6',
+  //   title: 'Sound & Lights',
+  //   description: 'Professional audio-visual design to set the perfect ambiance',
+  //   icon: 'Music',
+  // },
   {
     id: '6',
-    title: 'Sound & Lights',
-    description: 'Professional audio-visual design to set the perfect ambiance',
-    icon: 'Music',
-  },
-  {
-    id: '7',
     title: 'Event Coordination',
     description: 'Seamless day-of management ensuring every moment unfolds perfectly',
     icon: 'Calendar',
   },
-  {
-    id: '8',
-    title: 'Photography Setup',
-    description: 'Instagram-worthy photo corners and booth installations',
-    icon: 'Camera',
-  },
+  // {
+  //   id: '8',
+  //   title: 'Photography Setup',
+  //   description: 'Instagram-worthy photo corners and booth installations',
+  //   icon: 'Camera',
+  // },
 ];
 
 export const socialPosts: SocialPost[] = [

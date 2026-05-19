@@ -12,8 +12,8 @@ export default function Testimonials() {
   return (
     <section className="py-28 px-6 bg-matte-black relative overflow-hidden">
       {/* Refined background ambience */}
-      <div className="absolute top-1/3 left-0 w-[600px] h-[600px] rounded-full bg-champagne-gold/8 blur-[140px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-champagne/5 blur-[140px]" />
+      <div className="absolute top-1/3 left-0 w-150 h-150 rounded-full bg-champagne-gold/8 blur-[140px]" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 rounded-full bg-champagne/5 blur-[140px]" />
 
       {/* Subtle grid pattern */}
       <div
@@ -63,7 +63,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] p-10 md:p-16 text-center shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
+              className="relative bg-white/3 backdrop-blur-xl border border-white/10 rounded-[28px] p-10 md:p-16 text-center shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
             >
               {/* Gold accent line */}
               <div className="w-12 h-px bg-champagne-gold mx-auto mb-8" />
@@ -75,7 +75,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="font-subheading text-2xl md:text-3xl lg:text-4xl text-white/90 leading-[1.5] mb-10 italic font-light">
+              <p className="font-subheading text-2xl md:text-3xl lg:text-4xl text-white/90 leading-normal mb-10 italic font-light">
                 "{testimonials[current].content}"
               </p>
 

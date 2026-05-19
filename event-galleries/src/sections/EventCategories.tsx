@@ -15,7 +15,7 @@ export default function EventCategories() {
       {/* Ambient Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-champagne/20 blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-champagne-gold/10 blur-[180px]" />
+        <div className="absolute bottom-0 right-1/4 w-125 h-125 rounded-full bg-champagne-gold/10 blur-[180px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -31,7 +31,7 @@ export default function EventCategories() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-r from-transparent to-champagne-gold/60 origin-right"
+              className="w-12 h-px bg-linear-to-r from-transparent to-champagne-gold/60 origin-right"
             />
             <span className="text-champagne-gold text-[11px] tracking-[0.5em] uppercase font-semibold">
               Our Expertise
@@ -40,7 +40,7 @@ export default function EventCategories() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-l from-transparent to-champagne-gold/60 origin-left"
+              className="w-12 h-px bg-linear-to-l from-transparent to-champagne-gold/60 origin-left"
             />
           </motion.div>
           
@@ -76,7 +76,7 @@ export default function EventCategories() {
             >
               <Link
                 to="/gallery"
-                className="group relative block h-[480px] rounded-3xl overflow-hidden bg-matte-black"
+                className="group relative block h-120 rounded-3xl overflow-hidden bg-matte-black"
               >
                 {/* Image with Zoom Effect */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -90,8 +90,8 @@ export default function EventCategories() {
                 </div>
 
                 {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-matte-black/40 to-transparent opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-champagne-gold/0 group-hover:to-champagne-gold/20 transition-all duration-700" />
+                <div className="absolute inset-0 bg-linear-to-t from-matte-black via-matte-black/40 to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-champagne-gold/0 group-hover:to-champagne-gold/20 transition-all duration-700" />
                 
                 {/* Glassmorphism Border on Hover */}
                 <div className="absolute inset-3 rounded-2xl border border-white/0 group-hover:border-white/20 backdrop-blur-0 group-hover:backdrop-blur-[2px] transition-all duration-700" />
@@ -115,7 +115,7 @@ export default function EventCategories() {
                 <div className="absolute inset-0 flex flex-col justify-end p-8">
                   <div className="transition-all duration-500 group-hover:-translate-y-2">
                     {/* Animated Underline */}
-                    <div className="w-10 h-0.5 bg-gradient-to-r from-champagne-gold to-gold mb-5 transition-all duration-700 group-hover:w-20" />
+                    <div className="w-10 h-0.5 bg-linear-to-r from-champagne-gold to-gold mb-5 transition-all duration-700 group-hover:w-20" />
                     
                     <h3 className="font-heading text-2xl lg:text-[1.7rem] text-white font-normal mb-3 leading-tight tracking-wide">
                       {category.title}

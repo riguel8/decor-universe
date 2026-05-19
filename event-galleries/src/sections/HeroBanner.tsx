@@ -17,7 +17,7 @@ export default function HeroBanner() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-matte-black">
+    <section ref={containerRef} className="relative min-h-svh flex items-center justify-center overflow-hidden bg-matte-black">
       {/* Background Image with Parallax */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <motion.img
@@ -29,9 +29,9 @@ export default function HeroBanner() {
           className="w-full h-full object-cover"
         />
         {/* Cinematic gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-matte-black/80 via-matte-black/30 to-matte-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-matte-black/60 via-transparent to-matte-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-matte-black/80 via-matte-black/30 to-matte-black" />
+        <div className="absolute inset-0 bg-linear-to-r from-matte-black/60 via-transparent to-matte-black/40" />
+        <div className="absolute inset-0 bg-linear-to-t from-matte-black via-transparent to-transparent" />
       </motion.div>
 
       {/* Floating Gradient Orbs */}
@@ -43,7 +43,7 @@ export default function HeroBanner() {
             opacity: [0.15, 0.3, 0.15]
           }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 left-[5%] w-[500px] h-[500px] rounded-full bg-champagne-gold/20 blur-[150px]"
+          className="absolute top-1/4 left-[5%] w-125 h-125 rounded-full bg-champagne-gold/20 blur-[150px]"
         />
         <motion.div
           animate={{ 
@@ -52,14 +52,14 @@ export default function HeroBanner() {
             opacity: [0.1, 0.25, 0.1]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-1/4 right-[5%] w-[600px] h-[600px] rounded-full bg-champagne/15 blur-[180px]"
+          className="absolute bottom-1/4 right-[5%] w-150 h-150 rounded-full bg-champagne/15 blur-[180px]"
         />
         <motion.div
           animate={{ 
             opacity: [0.05, 0.15, 0.05]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gold/10 blur-[200px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-gold/10 blur-[200px]"
         />
       </div>
 
@@ -69,7 +69,7 @@ export default function HeroBanner() {
           initial={{ scaleY: 0, opacity: 0 }}
           animate={{ scaleY: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 1, ease: easeOutExpo }}
-          className="w-px h-32 bg-gradient-to-b from-transparent via-champagne-gold/50 to-transparent origin-top"
+          className="w-px h-32 bg-linear-to-b from-transparent via-champagne-gold/50 to-transparent origin-top"
         />
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
@@ -83,7 +83,7 @@ export default function HeroBanner() {
           initial={{ scaleY: 0, opacity: 0 }}
           animate={{ scaleY: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 1.2, ease: easeOutExpo }}
-          className="w-px h-32 bg-gradient-to-b from-transparent via-champagne-gold/50 to-transparent origin-top"
+          className="w-px h-32 bg-linear-to-b from-transparent via-champagne-gold/50 to-transparent origin-top"
         />
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
@@ -106,7 +106,7 @@ export default function HeroBanner() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="w-16 h-px bg-gradient-to-r from-transparent to-champagne-gold/70 origin-right"
+            className="w-16 h-px bg-linear-to-r from-transparent to-champagne-gold/70 origin-right"
           />
           <span className="text-champagne/90 text-[11px] tracking-[0.5em] uppercase font-medium">
             Luxury Event Atelier
@@ -115,7 +115,7 @@ export default function HeroBanner() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="w-16 h-px bg-gradient-to-l from-transparent to-champagne-gold/70 origin-left"
+            className="w-16 h-px bg-linear-to-l from-transparent to-champagne-gold/70 origin-left"
           />
         </motion.div>
 
@@ -179,11 +179,11 @@ export default function HeroBanner() {
           >
             <Link
               to="/gallery"
-              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-champagne-gold via-gold to-champagne-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full overflow-hidden shadow-[0_8px_40px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_60px_-8px_rgba(212,175,55,0.6)] transition-shadow duration-500"
+              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-linear-to-r from-champagne-gold via-gold to-champagne-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full overflow-hidden shadow-[0_8px_40px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_60px_-8px_rgba(212,175,55,0.6)] transition-shadow duration-500"
             >
               <span className="relative z-10">Explore Galleries</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-gold via-champagne-gold to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-r from-gold via-champagne-gold to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </Link>
           </motion.div>
           
@@ -221,16 +221,16 @@ export default function HeroBanner() {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 1.8 + i * 0.1 }}
-                    className="font-heading text-3xl md:text-4xl lg:text-5xl text-champagne mb-2"
+                    className="font-heading text-3xl md:text-4xl lg:text-5xl text-black/80 mb-2"
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-white/40 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-medium">
+                  <div className="text-black/60 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-medium">
                     {stat.label}
                   </div>
                 </div>
                 {i < 2 && (
-                  <div className="w-px h-16 bg-gradient-to-b from-transparent via-champagne-gold/30 to-transparent" />
+                  <div className="w-px h-16 bg-linear-to-b from-transparent via-champagne-gold/30 to-transparent" />
                 )}
               </div>
             ))}
@@ -250,13 +250,13 @@ export default function HeroBanner() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-px h-16 bg-gradient-to-b from-champagne-gold/60 via-champagne-gold/20 to-transparent"
+            className="w-px h-16 bg-linear-to-b from-champagne-gold/60 via-champagne-gold/20 to-transparent"
           />
         </div>
       </motion.div>
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ivory to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-ivory to-transparent pointer-events-none" />
     </section>
   );
 }

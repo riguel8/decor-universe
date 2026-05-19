@@ -33,7 +33,7 @@ export default function PackageDetailPage() {
   return (
     <div className="bg-ivory min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
+      <section className="relative h-[70vh] min-h-125 overflow-hidden">
         <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -45,8 +45,8 @@ export default function PackageDetailPage() {
             alt={pkg.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-matte-black via-matte-black/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-matte-black/60 via-transparent to-matte-black/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-matte-black via-matte-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-matte-black/60 via-transparent to-matte-black/30" />
         </motion.div>
 
         {/* Back Button */}
@@ -73,7 +73,7 @@ export default function PackageDetailPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="absolute top-32 right-6 lg:right-12 z-10"
           >
-            <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-champagne-gold/30 to-gold/30 backdrop-blur-xl rounded-full border border-champagne-gold/50">
+            <div className="flex items-center gap-2 px-5 py-3 bg-linear-to-r from-champagne-gold/30 to-gold/30 backdrop-blur-xl rounded-full border border-champagne-gold/50">
               <Sparkles className="w-4 h-4 text-champagne-gold" />
               <span className="text-champagne-gold text-[11px] tracking-[0.25em] uppercase font-semibold">Most Popular</span>
             </div>
@@ -89,7 +89,7 @@ export default function PackageDetailPage() {
               transition={{ duration: 0.8, delay: 0.3, ease: easeOutExpo }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-px bg-gradient-to-r from-champagne-gold to-transparent" />
+                <div className="w-12 h-px bg-linear-to-r from-champagne-gold to-transparent" />
                 <span className="text-champagne text-[11px] tracking-[0.5em] uppercase font-medium">
                   Luxury Package
                 </span>
@@ -266,7 +266,7 @@ export default function PackageDetailPage() {
                   >
                     <Link
                       to="/contact"
-                      className="flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-champagne-gold to-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full shadow-[0_8px_30px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_40px_-8px_rgba(212,175,55,0.6)] transition-all duration-500"
+                      className="flex items-center justify-center gap-3 w-full py-5 bg-linear-to-r from-champagne-gold to-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full shadow-[0_8px_30px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_40px_-8px_rgba(212,175,55,0.6)] transition-all duration-500"
                     >
                       <Calendar className="w-4 h-4" />
                       Book This Package
@@ -324,7 +324,7 @@ export default function PackageDetailPage() {
                       alt={relPkg.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-matte-black/80 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-matte-black/80 to-transparent" />
                     <div className="absolute bottom-4 left-4">
                       <span className="text-champagne font-heading text-2xl">{relPkg.price}</span>
                     </div>
@@ -349,7 +349,7 @@ export default function PackageDetailPage() {
       {/* CTA Section */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-matte-black relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-champagne-gold/5 blur-[200px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full bg-champagne-gold/5 blur-[200px]" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -372,7 +372,7 @@ export default function PackageDetailPage() {
             >
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-champagne-gold to-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full shadow-[0_8px_40px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_60px_-8px_rgba(212,175,55,0.6)] transition-all duration-500"
+                className="inline-flex items-center gap-3 px-12 py-5 bg-linear-to-r from-champagne-gold to-gold text-white text-[11px] tracking-[0.3em] uppercase font-semibold rounded-full shadow-[0_8px_40px_-8px_rgba(212,175,55,0.5)] hover:shadow-[0_16px_60px_-8px_rgba(212,175,55,0.6)] transition-all duration-500"
               >
                 Start Your Consultation
                 <ArrowRight className="w-4 h-4" />

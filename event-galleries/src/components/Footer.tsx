@@ -43,12 +43,12 @@ export default function Footer() {
   return (
     <footer className="bg-matte-black pt-28 lg:pt-32 pb-10 px-6 lg:px-12 relative overflow-hidden">
       {/* Decorative Top Border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne-gold/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-champagne-gold/40 to-transparent" />
 
       {/* Ambient Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 left-1/4 w-[600px] h-[400px] rounded-full bg-champagne-gold/5 blur-[180px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] rounded-full bg-champagne/5 blur-[150px]" />
+        <div className="absolute -top-32 left-1/4 w-150 h-100 rounded-full bg-champagne-gold/5 blur-[180px]" />
+        <div className="absolute bottom-0 right-1/4 w-125 h-75 rounded-full bg-champagne/5 blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -70,7 +70,7 @@ export default function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
               required
-              className="w-full pl-6 pr-36 py-5 bg-white/[0.04] border border-white/10 rounded-full text-white placeholder:text-white/30 focus:outline-none focus:border-champagne-gold/50 transition-colors text-sm"
+              className="w-full pl-6 pr-36 py-5 bg-white/4 border border-white/10 rounded-full text-white placeholder:text-white/30 focus:outline-none focus:border-champagne-gold/50 transition-colors text-sm"
             />
             <button
               type="submit"
@@ -88,10 +88,10 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-10 h-10 rounded-full bg-charcoal border border-champagne-gold/30 flex items-center justify-center">
-                <span className="font-heading italic text-champagne-gold text-lg">D</span>
+                <span className="font-heading italic text-champagne-gold text-lg">JB</span>
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-heading text-xl text-white">Décor Universe</span>
+                <span className="font-heading text-xl text-white">JB's Creation</span>
                 <span className="text-[10px] tracking-[0.3em] uppercase text-champagne-gold mt-1">Luxury Events</span>
               </div>
             </Link>
@@ -150,25 +150,26 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-champagne-gold mt-0.5 shrink-0" strokeWidth={1.5} />
                 <span className="text-white/60 text-sm leading-relaxed">
-                  123 Luxury Avenue<br />Makati City, Metro Manila
+                  Brgy.Marga, Tubod<br />Surigao del Norte, Philippines
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-champagne-gold shrink-0" strokeWidth={1.5} />
-                <span className="text-white/60 text-sm">+63 917 123 4567</span>
+                <span className="text-white/60 text-sm">+63 991 855 0522 / +63 970 337 9468</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-champagne-gold shrink-0" strokeWidth={1.5} />
-                <span className="text-white/60 text-sm">hello@decoruniverse.com</span>
+                <span className="text-white/60 text-sm">hello@jbcreations.com</span>
               </li>
             </ul>
           </div>
+          
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs tracking-wide">
-            © 2024 Décor Universe. Crafted with elegance. All rights reserved.
+            © 2026 JB's Creations. Crafted with elegance. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-white/30 text-xs hover:text-champagne-gold transition-colors">Privacy</a>
@@ -181,6 +182,9 @@ export default function Footer() {
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>
+          <p className="text-white/30 text-xs tracking-wide">
+            Powered by <a href="https://riguel-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-champagne-gold hover:underline">Riguel</a>
+          </p>
         </div>
       </div>
     </footer>

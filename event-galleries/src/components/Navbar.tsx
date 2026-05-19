@@ -15,11 +15,11 @@ const navLinks: NavItem[] = [
     name: 'Galleries',
     path: '/gallery',
     dropdown: [
-      { name: 'Weddings', path: '/gallery?category=weddings', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80', description: 'Elegant wedding celebrations' },
-      { name: 'Birthdays', path: '/gallery?category=birthdays', image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80', description: 'Memorable birthday parties' },
-      { name: 'Graduation', path: '/gallery?category=graduation', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80', description: 'Achievement celebrations' },
-      { name: 'Corporate', path: '/gallery?category=corporate', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80', description: 'Professional events' },
-      { name: 'Debut', path: '/gallery?category=debut', image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80', description: 'Coming of age celebrations' },
+      { name: 'Weddings', path: '/gallery?category=weddings', image: 'assets/decor/28ecb6db-7db5-4124-8dcc-5b7515cb104f.jpg', description: 'Elegant wedding celebrations' },
+      { name: 'Birthdays', path: '/gallery?category=birthdays', image: 'assets/decor/4b02ed24-c7cc-4afb-a621-935451414aed.jpg', description: 'Memorable birthday parties' },
+      { name: 'Graduation', path: '/gallery?category=graduation', image: 'assets/decor/f26b442a-66cd-4981-837e-f68e9a7a9864.jpg', description: 'Achievement celebrations' },
+      { name: 'Corporate', path: '/gallery?category=corporate', image: 'assets/decor/458134e4-e1fc-4014-a0a2-3559561829f5.jpg', description: 'Professional events' },
+      { name: 'Debut', path: '/gallery?category=debut', image: 'assets/decor/28ecb6db-7db5-4124-8dcc-5b7515cb104f.jpg', description: 'Coming of age celebrations' },
     ],
   },
   { name: 'Services', path: '/services' },
@@ -94,18 +94,18 @@ export default function Navbar() {
                 className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-700 ${
                   transparent 
                     ? 'bg-white/10 backdrop-blur-xl border border-white/25 shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
-                    : 'bg-gradient-to-br from-matte-black to-charcoal shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)]'
+                    : 'bg-linear-to-br from-matte-black to-charcoal shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)]'
                 }`}
               >
                 <span className={`font-heading text-xl italic transition-colors duration-500 ${
                   transparent ? 'text-champagne' : 'text-champagne-gold'
-                }`}>D</span>
+                }`}>JB</span>
               </motion.div>
               <div className="flex flex-col leading-none">
                 <span className={`font-heading text-[22px] font-medium tracking-wide transition-colors duration-500 ${
                   transparent ? 'text-white' : 'text-matte-black'
                 }`}>
-                  Décor Universe
+                  JB's Creation
                 </span>
                 <span className={`text-[9px] tracking-[0.35em] uppercase mt-1.5 font-medium transition-colors duration-500 ${
                   transparent ? 'text-champagne/90' : 'text-champagne-gold'
@@ -160,7 +160,7 @@ export default function Navbar() {
                           transition={{ duration: 0.3, ease: easeOutExpo }}
                           className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50"
                         >
-                          <div className="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2)] border border-champagne/20 overflow-hidden min-w-[480px]">
+                          <div className="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2)] border border-champagne/20 overflow-hidden min-w-120">
                             <div className="p-6">
                               <div className="grid grid-cols-2 gap-3">
                                 {link.dropdown?.map((item, idx) => (
@@ -228,7 +228,7 @@ export default function Navbar() {
                 className={`hidden lg:inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[11px] font-semibold tracking-[0.2em] uppercase transition-all duration-500 ${
                   transparent
                     ? 'bg-white/10 backdrop-blur-xl border border-white/25 text-white hover:bg-white hover:text-matte-black shadow-[0_0_30px_rgba(255,255,255,0.1)]'
-                    : 'bg-gradient-to-r from-champagne-gold to-gold text-white shadow-[0_4px_20px_-4px_rgba(212,175,55,0.5)] hover:shadow-[0_8px_30px_-4px_rgba(212,175,55,0.6)]'
+                    : 'bg-linear-to-r from-champagne-gold to-gold text-white shadow-[0_4px_20px_-4px_rgba(212,175,55,0.5)] hover:shadow-[0_8px_30px_-4px_rgba(212,175,55,0.6)]'
                 }`}
               >
                 Book Now
@@ -394,7 +394,7 @@ export default function Navbar() {
                 >
                   <Link
                     to="/contact"
-                    className="flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-champagne-gold to-gold text-white text-[12px] tracking-[0.25em] uppercase font-semibold rounded-full shadow-[0_8px_30px_-4px_rgba(212,175,55,0.4)]"
+                    className="flex items-center justify-center gap-3 w-full py-5 bg-linear-to-r from-champagne-gold to-gold text-white text-[12px] tracking-[0.25em] uppercase font-semibold rounded-full shadow-[0_8px_30px_-4px_rgba(212,175,55,0.4)]"
                   >
                     Book Consultation
                     <ArrowRight className="w-4 h-4" />

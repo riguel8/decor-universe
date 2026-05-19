@@ -27,7 +27,7 @@ export default function ServicesPage() {
           />
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-matte-black/70 via-matte-black/80 to-matte-black" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-champagne-gold/10 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 rounded-full bg-champagne-gold/10 blur-[120px]" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
@@ -102,7 +102,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section className="py-24 px-6 bg-pearl relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-champagne-gold/5 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-champagne-gold/5 blur-[120px]" />
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

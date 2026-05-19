@@ -18,8 +18,8 @@ export default function Services() {
     <section ref={sectionRef} className="py-32 lg:py-40 px-6 lg:px-12 bg-soft-beige relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-champagne-gold/5 blur-[200px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-champagne/10 blur-[150px]" />
+        <div className="absolute top-1/4 right-0 w-150 h-150 rounded-full bg-champagne-gold/5 blur-[200px]" />
+        <div className="absolute bottom-0 left-0 w-125 h-125 rounded-full bg-champagne/10 blur-[150px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -35,7 +35,7 @@ export default function Services() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-r from-transparent to-champagne-gold/60 origin-right"
+              className="w-12 h-px bg-linear-to-r from-transparent to-champagne-gold/60 origin-right"
             />
             <span className="text-champagne-gold text-[11px] tracking-[0.5em] uppercase font-semibold">
               The Art of Detail
@@ -44,7 +44,7 @@ export default function Services() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-12 h-px bg-gradient-to-l from-transparent to-champagne-gold/60 origin-left"
+              className="w-12 h-px bg-linear-to-l from-transparent to-champagne-gold/60 origin-left"
             />
           </motion.div>
           
@@ -82,14 +82,14 @@ export default function Services() {
                 <div className="group relative h-full p-8 lg:p-10 bg-white/80 backdrop-blur-sm rounded-3xl border border-champagne/20 hover:border-champagne-gold/30 hover:bg-white transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(212,175,55,0.15)]">
                   {/* Corner Accent */}
                   <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="absolute top-5 right-5 w-8 h-px bg-gradient-to-l from-champagne-gold to-transparent" />
-                    <div className="absolute top-5 right-5 h-8 w-px bg-gradient-to-b from-champagne-gold to-transparent" />
+                    <div className="absolute top-5 right-5 w-8 h-px bg-linear-to-l from-champagne-gold to-transparent" />
+                    <div className="absolute top-5 right-5 h-8 w-px bg-linear-to-b from-champagne-gold to-transparent" />
                   </div>
 
                   {/* Icon */}
                   <div className="relative mb-8 inline-block">
                     <div className="absolute inset-0 bg-champagne-gold/20 rounded-2xl blur-2xl scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-ivory to-champagne/30 border border-champagne/30 flex items-center justify-center group-hover:border-champagne-gold/50 group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
+                    <div className="relative w-16 h-16 rounded-2xl bg-linear-to-br from-ivory to-champagne/30 border border-champagne/30 flex items-center justify-center group-hover:border-champagne-gold/50 group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
                       <Icon className="w-7 h-7 text-champagne-gold" strokeWidth={1.5} />
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export default function Services() {
                   </p>
 
                   {/* Animated Underline */}
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-champagne-gold/50 to-transparent group-hover:w-16 group-hover:from-champagne-gold transition-all duration-700" />
+                  <div className="w-8 h-0.5 bg-linear-to-r from-champagne-gold/50 to-transparent group-hover:w-16 group-hover:from-champagne-gold transition-all duration-700" />
                 </div>
               </motion.div>
             );
