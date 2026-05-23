@@ -135,13 +135,13 @@ export default function BookingForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
               <div className="relative group">
-                <label className="block text-[10px] tracking-[0.3em] uppercase text-warm-gray mb-2.5 font-medium">Your Name</label>
+                <label className="block text-[10px] tracking-[0.3em] uppercase text-warm-gray mb-2.5 font-medium">Name</label>
                 <div className="relative">
                   <User className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-champagne-gold" strokeWidth={1.5} />
                   <input
                     type="text"
                     name="name"
-                    placeholder="Jane Doe"
+                    placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -158,7 +158,7 @@ export default function BookingForm() {
                   <input
                     type="email"
                     name="email"
-                    placeholder="jane@example.com"
+                    placeholder="email@example.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
