@@ -57,7 +57,7 @@ export default function ContactPage() {
             {[
               { icon: MapPin, label: 'Visit Us', info: 'Brgy. Marga, Tubod \nSurigao del Norte, Philippines' },
               { icon: Phone, label: 'Call Us', info: '+63 991 855 0522 \n+63 970 337 9468\nMon — Sun available' },
-              { icon: Mail, label: 'Email Us', info: 'hello@decoruniverse.com\nWe respond within 24h' },
+              { icon: Mail, label: 'Email Us', info: 'hello@jbscreation.com\nWe respond within 24h' },
               { icon: Clock, label: 'Office Hours', info: 'Mon — Sun\n9:00 AM — 7:00 PM' },
             ].map((item, index) => (
               <motion.div
