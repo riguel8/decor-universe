@@ -39,7 +39,7 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -77,38 +77,34 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: easeOutExpo }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        transition={{ duration: 0.9, ease: easeOutExpo }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           transparent
             ? 'bg-transparent'
-            : 'bg-ivory/80 backdrop-blur-2xl shadow-[0_1px_0_0_rgba(212,175,55,0.1),0_4px_30px_-5px_rgba(0,0,0,0.08)]'
+            : 'bg-pearl/85 backdrop-blur-2xl border-b border-champagne/10'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <div className="flex items-center justify-between h-20 lg:h-[88px]">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 group">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-700 ${
-                  transparent 
-                    ? 'bg-white/10 backdrop-blur-xl border border-white/25 shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
-                    : 'bg-linear-to-br from-matte-black to-charcoal shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)]'
-                }`}
-              >
-                <span className={`font-heading text-xl italic transition-colors duration-500 ${
+            <Link to="/" className="flex items-center gap-3.5 group">
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
+                transparent 
+                  ? 'bg-white/8 backdrop-blur-xl border border-white/15' 
+                  : 'bg-matte-black'
+              }`}>
+                <span className={`font-heading text-lg italic transition-colors duration-500 ${
                   transparent ? 'text-champagne' : 'text-champagne-gold'
                 }`}>JB</span>
-              </motion.div>
-              <div className="flex flex-col leading-none">
-                <span className={`font-heading text-[22px] font-medium tracking-wide transition-colors duration-500 ${
+              </div>
+              <div className="flex flex-col">
+                <span className={`font-heading text-xl leading-tight tracking-normal transition-colors duration-500 ${
                   transparent ? 'text-white' : 'text-matte-black'
                 }`}>
                   JB's Creation
                 </span>
-                <span className={`text-[9px] tracking-[0.35em] uppercase mt-1.5 font-medium transition-colors duration-500 ${
-                  transparent ? 'text-champagne/90' : 'text-champagne-gold'
+                <span className={`text-[9px] tracking-[0.3em] uppercase mt-0.5 font-medium transition-colors duration-500 ${
+                  transparent ? 'text-white/50' : 'text-champagne-gold'
                 }`}>
                   Luxury Events
                 </span>
@@ -116,7 +112,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
+            <div className="hidden lg:flex items-center gap-0.5" ref={dropdownRef}>
               {navLinks.map((link) => {
                 const active = location.pathname === link.path || 
                   (link.dropdown && location.pathname.includes(link.path.split('?')[0]));
@@ -131,20 +127,20 @@ export default function Navbar() {
                   >
                     <Link
                       to={link.path}
-                      className={`group relative flex items-center gap-1.5 px-5 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-500 ${
+                      className={`group relative flex items-center gap-1 px-4 py-2.5 text-[11px] font-medium tracking-[0.14em] uppercase transition-all duration-400 ${
                         active
-                          ? (transparent ? 'text-champagne' : 'text-champagne-gold')
-                          : (transparent ? 'text-white/90 hover:text-white' : 'text-charcoal/80 hover:text-matte-black')
+                          ? (transparent ? 'text-white' : 'text-matte-black')
+                          : (transparent ? 'text-white/70 hover:text-white' : 'text-warm-gray hover:text-matte-black')
                       }`}
                     >
                       <span className="relative">
                         {link.name}
-                        <span className={`absolute -bottom-1 left-0 h-px bg-champagne-gold transition-all duration-500 ${
+                        <span className={`absolute -bottom-1 left-0 h-[1.5px] bg-champagne-gold transition-all duration-400 ${
                           active ? 'w-full' : 'w-0 group-hover:w-full'
                         }`} />
                       </span>
                       {hasDropdown && (
-                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                        <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${
                           activeDropdown === link.name ? 'rotate-180' : ''
                         }`} />
                       )}
@@ -154,57 +150,56 @@ export default function Navbar() {
                     <AnimatePresence>
                       {hasDropdown && activeDropdown === link.name && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                          transition={{ duration: 0.3, ease: easeOutExpo }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          transition={{ duration: 0.25, ease: easeOutExpo }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
                         >
-                          <div className="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2)] border border-champagne/20 overflow-hidden min-w-120">
-                            <div className="p-6">
-                              <div className="grid grid-cols-2 gap-3">
+                          <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-champagne/12 overflow-hidden min-w-[480px]">
+                            <div className="p-5">
+                              <div className="grid grid-cols-2 gap-1.5">
                                 {link.dropdown?.map((item, idx) => (
                                   <motion.div
                                     key={item.name}
-                                    initial={{ opacity: 0, y: 10 }}
+                                    initial={{ opacity: 0, y: 8 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: idx * 0.05, duration: 0.3 }}
+                                    transition={{ delay: idx * 0.04, duration: 0.25 }}
                                   >
                                     <Link
                                       to={item.path}
-                                      className="group flex items-center gap-4 p-3 rounded-xl hover:bg-champagne/10 transition-all duration-300"
+                                      className="group/item flex items-center gap-3.5 p-3 rounded-xl hover:bg-soft-beige transition-colors duration-250"
                                     >
                                       {item.image && (
-                                        <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+                                        <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 ring-1 ring-champagne/15">
                                           <img 
                                             src={item.image} 
                                             alt={item.name}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
                                           />
                                         </div>
                                       )}
                                       <div className="flex-1 min-w-0">
-                                        <span className="block text-sm font-medium text-matte-black group-hover:text-champagne-gold transition-colors">
+                                        <span className="block text-[13px] font-medium text-matte-black group-hover/item:text-champagne-gold transition-colors">
                                           {item.name}
                                         </span>
                                         {item.description && (
-                                          <span className="block text-xs text-warm-gray mt-0.5 truncate">
+                                          <span className="block text-[11px] text-warm-gray mt-0.5 leading-relaxed">
                                             {item.description}
                                           </span>
                                         )}
                                       </div>
-                                      <ArrowRight className="w-4 h-4 text-champagne-gold opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                                     </Link>
                                   </motion.div>
                                 ))}
                               </div>
-                              <div className="mt-4 pt-4 border-t border-champagne/15">
+                              <div className="mt-3 pt-3 border-t border-champagne/10">
                                 <Link 
                                   to={link.path}
-                                  className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.15em] uppercase text-champagne-gold hover:text-dark-gold transition-colors"
+                                  className="flex items-center justify-center gap-2 text-[10px] font-medium tracking-[0.15em] uppercase text-champagne-gold hover:text-dark-gold transition-colors py-1"
                                 >
                                   View All Galleries
-                                  <ArrowRight className="w-3.5 h-3.5" />
+                                  <ArrowRight className="w-3 h-3" />
                                 </Link>
                               </div>
                             </div>
@@ -219,30 +214,30 @@ export default function Navbar() {
 
             {/* Book Now Button (desktop) */}
             <motion.div
-              whileHover={{ scale: 1.02, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             >
               <Link
                 to="/contact"
-                className={`hidden lg:inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[11px] font-semibold tracking-[0.2em] uppercase transition-all duration-500 ${
+                className={`hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[10px] font-semibold tracking-[0.18em] uppercase transition-all duration-500 ${
                   transparent
-                    ? 'bg-white/10 backdrop-blur-xl border border-white/25 text-white hover:bg-white hover:text-matte-black shadow-[0_0_30px_rgba(255,255,255,0.1)]'
-                    : 'bg-linear-to-r from-champagne-gold to-gold text-white shadow-[0_4px_20px_-4px_rgba(212,175,55,0.5)] hover:shadow-[0_8px_30px_-4px_rgba(212,175,55,0.6)]'
+                    ? 'bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white hover:text-matte-black'
+                    : 'bg-matte-black text-white hover:bg-champagne-gold'
                 }`}
               >
                 Book Now
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </motion.div>
 
             {/* Mobile Menu Button */}
             <motion.button
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.92 }}
               onClick={() => setIsOpen(!isOpen)}
-              className={`lg:hidden relative w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 ${
+              className={`lg:hidden relative w-11 h-11 flex items-center justify-center rounded-full transition-all duration-300 ${
                 transparent 
-                  ? 'bg-white/10 backdrop-blur-xl border border-white/20 text-white' 
+                  ? 'bg-white/10 backdrop-blur-xl border border-white/15 text-white' 
                   : 'bg-soft-beige text-matte-black'
               }`}
               aria-label="Toggle menu"
@@ -256,7 +251,7 @@ export default function Navbar() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="w-5 h-5" />
+                    <X className="w-4.5 h-4.5" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -266,7 +261,7 @@ export default function Navbar() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="w-5 h-5" />
+                    <Menu className="w-4.5 h-4.5" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -284,8 +279,8 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="fixed inset-0 z-40 bg-matte-black/60 backdrop-blur-sm lg:hidden"
+              transition={{ duration: 0.35 }}
+              className="fixed inset-0 z-40 bg-matte-black/50 backdrop-blur-sm lg:hidden"
               onClick={() => setIsOpen(false)}
             />
 
@@ -294,23 +289,24 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ duration: 0.5, ease: easeOutExpo }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-ivory/98 backdrop-blur-2xl shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.3)] lg:hidden overflow-y-auto"
+              transition={{ duration: 0.45, ease: easeOutExpo }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-sm bg-pearl shadow-[-8px_0_40px_-10px_rgba(0,0,0,0.2)] lg:hidden overflow-y-auto"
             >
               {/* Close Button */}
-              <div className="sticky top-0 flex justify-end p-6 bg-ivory/80 backdrop-blur-xl z-10">
+              <div className="sticky top-0 flex justify-between items-center px-6 py-5 bg-pearl/90 backdrop-blur-xl z-10">
+                <span className="font-heading text-lg text-matte-black">Menu</span>
                 <motion.button
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.92 }}
                   onClick={() => setIsOpen(false)}
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-soft-beige text-matte-black"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-soft-beige text-matte-black"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </motion.button>
               </div>
 
               {/* Mobile Nav Links */}
-              <div className="px-8 pb-12">
-                <nav className="space-y-2">
+              <div className="px-6 pb-10">
+                <nav className="space-y-0">
                   {navLinks.map((link, i) => {
                     const hasDropdown = !!link.dropdown;
                     const isAccordionOpen = mobileAccordion === link.name;
@@ -318,20 +314,20 @@ export default function Navbar() {
                     return (
                       <motion.div
                         key={link.name}
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: 24 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
+                        transition={{ delay: 0.08 + i * 0.04, duration: 0.35 }}
                       >
                         {hasDropdown ? (
                           <div>
                             <button
                               onClick={() => setMobileAccordion(isAccordionOpen ? null : link.name)}
-                              className="w-full flex items-center justify-between py-4 border-b border-champagne/15"
+                              className="w-full flex items-center justify-between py-4 border-b border-champagne/12"
                             >
-                              <span className="font-heading text-2xl text-matte-black">
+                              <span className="font-heading text-[22px] text-matte-black">
                                 {link.name}
                               </span>
-                              <ChevronDown className={`w-5 h-5 text-champagne-gold transition-transform duration-300 ${
+                              <ChevronDown className={`w-4 h-4 text-warm-gray transition-transform duration-300 ${
                                 isAccordionOpen ? 'rotate-180' : ''
                               }`} />
                             </button>
@@ -344,15 +340,15 @@ export default function Navbar() {
                                   transition={{ duration: 0.3, ease: easeOutExpo }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="py-3 pl-4 space-y-1">
+                                  <div className="py-3 pl-1 space-y-0.5">
                                     {link.dropdown?.map((item) => (
                                       <Link
                                         key={item.name}
                                         to={item.path}
-                                        className="flex items-center gap-3 py-3 text-warm-gray hover:text-champagne-gold transition-colors"
+                                        className="flex items-center gap-3 py-2.5 text-warm-gray hover:text-champagne-gold transition-colors"
                                       >
                                         {item.image && (
-                                          <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+                                          <div className="w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-champagne/15">
                                             <img 
                                               src={item.image} 
                                               alt={item.name}
@@ -360,7 +356,7 @@ export default function Navbar() {
                                             />
                                           </div>
                                         )}
-                                        <span className="font-medium">{item.name}</span>
+                                        <span className="text-[14px]">{item.name}</span>
                                       </Link>
                                     ))}
                                   </div>
@@ -371,7 +367,7 @@ export default function Navbar() {
                         ) : (
                           <Link
                             to={link.path}
-                            className={`block py-4 font-heading text-2xl border-b border-champagne/15 transition-colors ${
+                            className={`block py-4 font-heading text-[22px] border-b border-champagne/12 transition-colors ${
                               location.pathname === link.path 
                                 ? 'text-champagne-gold' 
                                 : 'text-matte-black hover:text-champagne-gold'
@@ -387,17 +383,17 @@ export default function Navbar() {
 
                 {/* Mobile CTA */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
-                  className="mt-10"
+                  transition={{ delay: 0.35, duration: 0.35 }}
+                  className="mt-8"
                 >
                   <Link
                     to="/contact"
-                    className="flex items-center justify-center gap-3 w-full py-5 bg-linear-to-r from-champagne-gold to-gold text-white text-[12px] tracking-[0.25em] uppercase font-semibold rounded-full shadow-[0_8px_30px_-4px_rgba(212,175,55,0.4)]"
+                    className="flex items-center justify-center gap-2.5 w-full py-4 bg-matte-black text-white text-[11px] tracking-[0.2em] uppercase font-medium rounded-full"
                   >
                     Book Consultation
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </motion.div>
 
@@ -405,12 +401,12 @@ export default function Navbar() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
-                  className="mt-12 pt-8 border-t border-champagne/20"
+                  transition={{ delay: 0.45, duration: 0.35 }}
+                  className="mt-10 pt-6 border-t border-champagne/12"
                 >
-                  <p className="text-[10px] tracking-[0.3em] uppercase text-champagne-gold mb-4">Contact</p>
-                  <p className="text-warm-gray text-sm">hello@decoruniverse.com</p>
-                  <p className="text-warm-gray text-sm mt-1">+63 917 123 4567</p>
+                  <p className="text-[9px] tracking-[0.25em] uppercase text-warm-gray-light mb-3">Contact</p>
+                  <p className="text-warm-gray text-[13px]">hello@jbscreation.com</p>
+                  <p className="text-warm-gray text-[13px] mt-1">+63 991 855 0522</p>
                 </motion.div>
               </div>
             </motion.div>

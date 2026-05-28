@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  /* Refined Luxury Color Palette */
-  --color-ivory: #F8F5F2;
-  --color-ivory-warm: #FAF7F4;
-  --color-champagne: #E8D8C4;
-  --color-champagne-light: #F0E6DA;
-  --color-champagne-gold: #D4AF37;
-  --color-gold: #C9A227;
-  --color-dark-gold: #B8941F;
-  --color-matte-black: #1A1A1A;
-  --color-charcoal: #2A2A2A;
-  --color-soft-black: #242424;
-  --color-soft-beige: #F5F0E8;
+  /* Refined Luxury Color Palette — tighter contrast ratios */
+  --color-ivory: #FAF8F5;
+  --color-ivory-warm: #F7F4F0;
+  --color-champagne: #E2D1BC;
+  --color-champagne-light: #EDE4D9;
+  --color-champagne-gold: #C6A24E;
+  --color-gold: #B8922E;
+  --color-dark-gold: #A07E22;
+  --color-matte-black: #141414;
+  --color-charcoal: #232323;
+  --color-soft-black: #1C1C1C;
+  --color-soft-beige: #F3EDE4;
   --color-pearl: #FDFCFA;
-  --color-warm-gray: #6B6B6B;
-  --color-warm-gray-light: #9A9A9A;
-  --color-cream: #FFFEF9;
+  --color-warm-gray: #74706A;
+  --color-warm-gray-light: #A09B95;
+  --color-cream: #FEFDF8;
 
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-subheading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Luxury Shadows */
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-  --shadow-medium: 0 8px 30px -4px rgba(0, 0, 0, 0.1);
-  --shadow-elevated: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
-  --shadow-glow-gold: 0 0 40px -10px rgba(212, 175, 55, 0.4);
+  /* Luxury Shadows — softer, more diffused */
+  --shadow-soft: 0 2px 16px -2px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 8px 32px -6px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 24px 64px -16px rgba(0, 0, 0, 0.12);
+  --shadow-glow-gold: 0 0 48px -12px rgba(198, 162, 78, 0.35);
 
   /* Animation Easings */
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -47,18 +48,23 @@ body {
   background-color: var(--color-pearl);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   font-weight: 400;
+  text-wrap: balance;
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -66,17 +72,24 @@ p {
   color: white;
 }
 
-/* Custom scrollbar */
+/* Ultra-thin scrollbar — minimal & premium */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-pearl);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-champagne-gold);
-  border-radius: 5px;
+  background: var(--color-champagne);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-dark-gold);
+  background: var(--color-champagne-gold);
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-champagne-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
